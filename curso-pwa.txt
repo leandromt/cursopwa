@@ -1,0 +1,65 @@
+/*
+	PWA - Progressive Web Apps
+*/
+
+
+
+Aula 01 - O QUE É?
+
+* Suporte apenas para android
+* Provavelmente funcionara no iOS 11
+* Página Web com algumas funcionalidade de de APP
+* Recurso para rodar o site offline
+* https://pwa.rocks/
+
+
+Aula 02 - O QUE É POSSÍVEL FAZER?
+
+* Rodar offline
+* Adicionar (Instalar) na tela inicial do smartphone
+* https://whatwebcando.today/
+* Suport dos browsers
+
+
+Aula 03 - WEB SERVER E ARQUIVOS INICIAIS
+
+* Instalar a extensão "Web Server for Chrome"
+* HTTS Obrigatorio
+
+
+
+Aula 04 - RESPONSIVO
+
+Aula 05 - CRIANDO INTERFACE DO APP
+
+Aula 06 - MANIPULANDO ELEMENTOS DO DOM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
