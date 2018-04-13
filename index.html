@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	
-	<base href="/">
 
+	<!-- META -->
+	<base href="/">
 	<meta charset="UTF-8">
 	<title>PWA TESTES</title>
-
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="js/object-observe.js"></script>
-	<script src="js/array-observe.js"></script>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/colors.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	
+	<!-- JS -->
+	<script src="js/object.observe.polyfill.js"></script> <!-- adiciona recursos novos do js -->
+	<script src="js/array.observe.polyfill.js"></script> <!-- adiciona recursos novos do js -->
 	<script src="js/scripts.js"></script>
 
 </head>
-<body>
-	
-	
+<body class="grey lighten-5 blue-grey-text">
 
-	<header id="header">
+
+	
+	<!-- HEADER -->
+	<header id="header" class="container grey lighten-4">
 		<h1>Testes PWA</h1>
 	</header>
-	
+	<!-- /HEADER -->
 
-	<div id="content">
+
+	
+	<!-- CONTENT -->
+	<div id="content" class="container grey lighten-4">
 
 		<p>Adicione suas anotações a seguir</p>
 
-
 		<form id="form-add-note">
-			<input type="text" placeholder="Anotações...">
-			<input type="submit" value="+">
+			<input type="text" placeholder="Anotações..." class="col-2 white">
+			<input type="submit" value="+" class="blue-grey white-text col-1">
 		</form>
 
 		<ul id="notes">
@@ -37,7 +44,7 @@
 		</ul>
 
 	</div>
-
+	<!-- /CONTENT -->
 
 
 </body>

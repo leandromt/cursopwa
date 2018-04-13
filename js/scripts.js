@@ -13,6 +13,35 @@ let updateList = function(){
 		let value = '';
 		let status = null;
 
+		if(changes[0].type === 'splice'){
+			index = changes[0].index;
+			value = changes[0].object[index];
+			status = (changes[0].addedCount > 0) ? 'created' : 'removed';
+		}
+
+		if(changes[0].type === 'update'){
+			index = changes[0].name;
+			value = changes[0].object[index];
+			status = 'update';
+		}
+
+		if(!value && status === 'created' && status === 'update'){
+			return;
+		}
+
+		let notesTag = document.getElementById('notes');
+
+		if(status === 'updated'){
+			console.log('implementar');
+		}
+		if(status === 'removed'){
+			let listOfNotes = document.querySelectorAll('#notes li');
+			notesTag.removeChild();
+		}
+		if(status === 'updated'){
+
+		}
+
 		console.log(changes);
 
 
@@ -46,7 +75,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 	// Adiciona um evento em um elemento
 	formAddNotes.addEventListener('submit', function(e){
-		// Cancela o envio do form
+
+		// Cancela o envio do form. Stop qualquer evento padrao
 		e.preventDefault();
 		
 		createNote();
@@ -59,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 // Evento clic nas notas para serem removidas
 // As notas serao adcionadas com Ajax, por isso o click nao pode esta amarrada nelas, e sim no pai
-document.addEventListener('click',function(e){
+document.addEventListener('click', function(e) {
 
 	// Recupera a lista de notas
 	let notesTag = document.getElementById('notes');
