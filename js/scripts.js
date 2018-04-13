@@ -1,5 +1,6 @@
 // Lista de Notas
-let notes = {data: []};
+let notes = window.localStorage.getItem('notes') || '{"data": []}';
+notes = JSON.parse(notes);
 
 
 // 
@@ -22,10 +23,10 @@ let updateList = function(){
 		if(changes[0].type === 'update'){
 			index = changes[0].name;
 			value = changes[0].object[index];
-			status = 'update';
+			status = 'updated';
 		}
 
-		if(!value && status === 'created' && status === 'update'){
+		if(!value && status === 'created' && status === 'updated'){
 			return;
 		}
 
@@ -34,15 +35,20 @@ let updateList = function(){
 		if(status === 'updated'){
 			console.log('implementar');
 		}
+
 		if(status === 'removed'){
 			let listOfNotes = document.querySelectorAll('#notes li');
-			notesTag.removeChild();
-		}
-		if(status === 'updated'){
-
+			notesTag.removeChild(listOfNotes[index]);
 		}
 
-		console.log(changes);
+		if(status === 'created'){
+			let newLi = document.createElement('li');
+			newLi.innerHTML = value;
+			notesTag.appendChild(newLi);
+		}
+
+
+		window.localStorage.setItem('notes', JSON.stringify(notes));
 
 
 	});
@@ -69,6 +75,15 @@ updateList();
 
 // Equivalente ao document ready do jquery
 document.addEventListener('DOMContentLoaded', function(event) {
+
+	let listOfNotes = document.getElementById('notes');
+	let listHTML = '';
+
+	for(let i = 0; i < notes.data.length; i++){
+		listHTML += '<li>' + notes.data[i] + '</li>';
+	}
+
+	listOfNotes.innerHTML = listHTML;
 
 	// Recupera um elemento pelo ID
 	let formAddNotes = document.getElementById('form-add-note');
@@ -115,3 +130,17 @@ document.addEventListener('click', function(e) {
 
 
 });
+
+
+
+// SERVICE WORKER
+if('serviceWorker' in navigator){
+	navigator.serviceWorker
+	.register('./service-worker.js')
+	.then(function(reg){
+		console.log('Service Worker Register');
+	})
+	.catch(function(err){
+		console.log('Erro', err);
+	});
+}
