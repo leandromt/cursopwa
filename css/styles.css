@@ -18,7 +18,7 @@
 }
 
 #notes li:hover {
-    background-color: #607d8b;
+    background-color: #0079C1;
     color: #fff;
 }
 
@@ -100,4 +100,10 @@ input {
     .container {
         max-width: 1140px;
     }
+}
+
+/* TESTE */
+#header, #form-add-note input[type="submit"] {
+    background-color: #0079C1;
+    color: #fff;
 }

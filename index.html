@@ -5,24 +5,51 @@
 	<!-- META -->
 	<base href="/">
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- META TAGS OBRIGATORIAS PARA PWA -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="myNotes">
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+    <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#0079C1">
+    <meta name="theme-color" content="#0079C1">
+    <!-- META -->
+
 	<title>PWA TESTES</title>
+
+	<link rel="manifest" href="manifest.json">
 	
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="css/colors.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	
 	<!-- JS -->
+	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyAfVAO4hc5Wcg0qBrVZ_nSGtJ0IoHkRstA",
+	    authDomain: "cursopwa-831eb.firebaseapp.com",
+	    databaseURL: "https://cursopwa-831eb.firebaseio.com",
+	    projectId: "cursopwa-831eb",
+	    storageBucket: "cursopwa-831eb.appspot.com",
+	    messagingSenderId: "291116311296"
+	  };
+	  firebase.initializeApp(config);
+	</script>
 	<script src="js/object.observe.polyfill.js"></script> <!-- adiciona recursos novos do js -->
 	<script src="js/array.observe.polyfill.js"></script> <!-- adiciona recursos novos do js -->
 	<script src="js/scripts.js"></script>
 
 </head>
-<body class="grey lighten-5 blue-grey-text">
+<body>
 
 
 	
 	<!-- HEADER -->
-	<header id="header" class="container grey lighten-4">
+	<header id="header" class="container">
 		<h1>Testes PWA</h1>
 	</header>
 	<!-- /HEADER -->
@@ -30,13 +57,13 @@
 
 	
 	<!-- CONTENT -->
-	<div id="content" class="container grey lighten-4">
+	<div id="content" class="container">
 
 		<p>Adicione suas anotações a seguir</p>
 
 		<form id="form-add-note">
 			<input type="text" placeholder="Anotações..." class="col-2 white">
-			<input type="submit" value="+" class="blue-grey white-text col-1">
+			<input type="submit" value="+" class="col-1">
 		</form>
 
 		<ul id="notes">
